@@ -1,0 +1,51 @@
+# Can be separated by whitespaces
+
+ESON ::= VALUE
+
+VALUE ::= TAG VALUE
+        | OBJECT
+        | LIST
+        | STRING
+        | NUMBER
+        | true
+        | false
+        | null
+
+OBJECT ::= { }
+         | { PAIRS }
+
+PAIRS ::= PAIR
+        | PAIR, PAIRS
+
+PAIR ::= STRING : VALUE
+
+LIST ::= [ ]
+       | [ VALUES ]
+
+VALUES ::= VALUE
+         | VALUE, VALUES
+
+
+# Cannot be separated by whitespaces
+
+TAG ::= #[^\s]*
+
+STRING ::= ""
+         | "CHARS"
+
+CHARS ::= CHAR
+        | CHAR CHARS
+
+CHAR ::= [^\\"]
+       | \"
+       | \\
+       | \b
+       | \f
+       | \n
+       | \r
+       | \t
+       | \u HEX-DIGIT HEX-DIGIT HEX-DIGIT HEX-DIGIT
+
+HEX-DIGIT := [0-9a-fA-F]
+
+NUMBER ::= -?(0|[1-9][0-9]*)(\.[0-9]+)?([eE][+-]?[0-9]+)?
