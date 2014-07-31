@@ -39,7 +39,7 @@ Tag labels a string containing time in one of the following formats:
   * `YYYY-MM-DDTHH:MM:SS[.s*]` is the datetime of any second
     precession without information about timezone.
   * `YYYY-MM-DDTHH:MM:SS[.s*]<TZO>` is the datetime, where `<TZO>`
-    is an timezone offset from GMT in one of the forms:
+    is a timezone offset from GMT in one of the forms:
       * `+HH:MM` positive offset
       * `-HH:MM` negative offset
       * `Z` no offset
@@ -51,7 +51,7 @@ Examples:
       #core/datetime "2014-07-24T16:47:47.00001",
       #core/datetime "2014-07-24T16:47:47+08:30",
       #core/datetime "2014-07-24T16:47:47.4242Z",
-      #core/datetime "2014-07-24T16:47:47.0-03:00",
+      #core/datetime "2014-07-24T16:47:47.0-03:00"
     ]
 
 &nbsp;
